@@ -1,8 +1,11 @@
+;; Run with clisp
+;; (load "task1.lisp")
+
 (setf x (make-array '(4 3)))
 (setf y (make-array '(4 3)))
 (setf z (make-array '(4 3)))
 
-
+;;  Simple print
 (print "First array:")
 (terpri)
 
@@ -13,6 +16,7 @@
     )
 )
 
+;; Another simple print
 (print "Second array:")
 (terpri)
 
@@ -23,7 +27,7 @@
     )
 )
 
-
+;; Compare x and y array elements
 (dotimes (i 4)
     (dotimes (j 3)
         (if (>= (aref x i j) (aref y i j)) 
@@ -35,7 +39,7 @@
     )
 )
 
-
+;; function for printing array prettily
 (defun print-2d-array-as-table (array)
   (loop for i from 0 below (array-dimension array 0)
         do (loop for j from 0 below (array-dimension array 1)
